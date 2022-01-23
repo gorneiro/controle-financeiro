@@ -1,9 +1,11 @@
-const bodyParser = require('body-parser')
-const { json } = require('body-parser')
 const express = require ('express')
-const { send } = require('express/lib/response')
+const routes = require('./routes')
 const app = express ()
+
+routes(app)
 
 app.listen(3001, function(){
     console.log("Servidor rodando na porta 3001")    
 })
+
+module.exports = app
